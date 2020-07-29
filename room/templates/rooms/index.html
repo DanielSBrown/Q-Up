@@ -1,0 +1,9 @@
+{% if current_room_list %}
+    <ul>
+    {% for room in current_room_list %}
+      <li><a href="{% url 'room:detail' room.id %}">{{ room.group_name }}</a></li>
+    {% endfor %}
+    </ul>
+{% else %}
+    <p>No rooms are available.</p>
+{% endif %}
